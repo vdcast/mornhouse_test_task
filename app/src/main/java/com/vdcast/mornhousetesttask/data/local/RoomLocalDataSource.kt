@@ -11,11 +11,11 @@ class RoomLocalDataSource(private val factDao: FactDao) : LocalDataSource {
     override suspend fun update(factEntity: FactEntity) = factDao.update(factEntity)
 
     override suspend fun delete(factEntity: FactEntity) = factDao.delete(factEntity)
+    override suspend fun deleteAll() = factDao.deleteAll()
 
     override fun getFacts(): Flow<List<Fact>> = factDao.getFacts()
         .map { factEntities ->
             factEntities.map { it.toFact() }
         }
 
-    override suspend fun getFactById(id: Int): FactEntity? = factDao.getFactById(id)
 }

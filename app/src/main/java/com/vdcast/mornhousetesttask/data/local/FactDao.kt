@@ -19,9 +19,9 @@ interface FactDao {
     @Delete
     suspend fun delete(factEntity: FactEntity)
 
+    @Query("DELETE FROM facts_table")
+    suspend fun deleteAll()
+
     @Query("SELECT * FROM facts_table ORDER BY id DESC")
     fun getFacts(): Flow<List<FactEntity>>
-
-    @Query("SELECT * FROM facts_table WHERE id = :id")
-    suspend fun getFactById(id: Int): FactEntity?
 }

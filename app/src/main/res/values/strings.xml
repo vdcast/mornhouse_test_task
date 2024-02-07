@@ -7,4 +7,6 @@
     <string name="search_history">Search history</string>
     <string name="fact_about_number">Fact about number %d:</string>
     <string name="back">Back</string>
+    <string name="history_empty">History is empty.</string>
+    <string name="clear">Clear</string>
 </resources>

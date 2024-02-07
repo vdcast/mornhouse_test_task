@@ -14,4 +14,5 @@ sealed interface AppEvent {
     object ShowProgressIndicator: AppEvent
     object DismissProgressIndicator: AppEvent
     data class UpdateEventForRetry(val eventForRetry: AppEvent): AppEvent
+    object ClearHistory: AppEvent
 }

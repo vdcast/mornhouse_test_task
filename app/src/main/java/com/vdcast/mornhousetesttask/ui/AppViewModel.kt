@@ -160,6 +160,12 @@ class AppViewModel(
                     )
                 }
             }
+
+            AppEvent.ClearHistory -> {
+                viewModelScope.launch {
+                    localDataSource.deleteAll()
+                }
+            }
         }
     }
 }
